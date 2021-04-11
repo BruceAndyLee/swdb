@@ -1,5 +1,9 @@
 # Swdb
 
+An attempt at building a single page app that effectively uses api provided at http://swapi.dev/ to create an interface to browse the star-wars data base.
+
+Some pregenerated angular related data follows...
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.3.
 
 ## Development server
