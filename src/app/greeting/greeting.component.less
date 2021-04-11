@@ -1,0 +1,90 @@
+.greeting {
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgba(117, 255, 225, 0.836);
+
+    width: 100%;
+    height: 100%;
+
+    background: 
+        repeating-linear-gradient(
+            0deg, 
+            rgb(8, 19, 15),
+            black,
+        );
+
+    &__header {
+        font-size: larger;
+        text-align: center;
+        padding-top: 40px;
+
+        // &::after {
+        //     animation: scrolling 3s steps(20) infinite,
+        //                 scaling 17s steps(5) infinite;
+        //     background: url("../../assets/images/scanlines.png");
+        //     content: "";
+        //     background-size: 150%;
+        //     height: 100%;
+        //     width: 100%;
+        //     opacity: 0.2;
+        //     position: fixed;
+        //     top: 0;
+        //     left: 0;
+        // }
+    }
+
+    &__button-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        padding: 100px 0 100px 0;
+
+        .button {
+            color: rgba(117, 255, 225, 0.836);
+            padding: 50px;
+            border: none;
+            outline: none;
+            background-color: transparent;
+
+            box-shadow: inset 0 0 30px 10px rgba(212, 255, 248, 0.1);
+
+            text-shadow: 0 0 10px rgba(212, 255, 248, 0.15);
+            font-size:  larger;
+
+            &:hover {
+                cursor: pointer;
+                text-shadow: 0 0 10px rgba(212, 255, 248, 0.45);
+                box-shadow: inset 0 0 30px 10px rgba(127, 255, 202, 0.37),
+                            0 0 30px 10px rgba(212, 255, 248, 0.08);
+            }
+        }
+    }
+}
+
+.greeting > button {
+    
+}
+
+@keyframes scrolling {
+    0%, 100% { transform: translateY(0);}
+    5% { transform: translateY(5px);}
+    10% { transform: translateY(1px);}
+    15% { transform: translateY(-1px);}
+    20% { transform: translateY(-3px);}
+    25% { transform: translateY(-2px);}
+    30% { transform: translateY(-4px);}
+    35% { transform: translateY(-1px);}
+    40% { transform: translateY(-2px);}
+    45% { transform: translateY(0px);}
+    50% { transform: translateY(-2px);}
+    55% { transform: translateY(-1px);}
+    60% { transform: translateY(1px);}
+    65% { transform: translateY(3px);}
+    70% { transform: translateY(2px);}
+    75% { transform: translateY(3px);}
+    80% { transform: translateY(-4px);}
+    85% { transform: translateY(-1px);}
+    90% { transform: translateY(2px);}
+    95% { transform: translateY(1px);}
+}

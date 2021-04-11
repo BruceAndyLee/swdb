@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "swdb"
+    }
+  },
+  "defaultProject": "swdb",
+  "cli": {
+    "analytics": "36069cb3-524f-4aeb-96ea-f33f707d7589"
+  }
 }

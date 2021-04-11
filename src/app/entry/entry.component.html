@@ -1,0 +1,78 @@
+<div class="entry">
+
+    <span class="entry__noise"></span>
+
+    <div class="entry__header">
+        <button class="entry__header-button"
+                (click)="loadPreviousEntry()"
+                [ngClass]="{
+                    deactivated: !previousUrls.length
+                }"
+        >
+            back
+        </button>
+    </div>
+
+    <div class="entry__image" (click)="rollSprite()">
+        <div [hidden]="spinnerVisible" class="entry__image-content">
+            <span *ngFor="let str of entryImage[frameNum]">
+                {{str}}<br>
+            </span>
+        </div>
+
+        <div [hidden]="!spinnerVisible">
+            <app-spinner></app-spinner>
+        </div>
+    </div>
+
+    <div *ngIf="entry" class="entry__table">
+
+        <div class="entry__table-content">
+            <div *ngFor="let key of entryKeys"
+                class="entry__table-row"
+                [ngClass]="{
+                    unknown: isUnknown(key)
+                }"
+            >
+                <div class="entry__table-name">
+                    {{key.replaceAll('_', ' ')}}
+                </div>
+
+                <div class="entry__table-value">
+                    {{entry.get(key) | noInfo}}
+                </div>
+            </div>
+        </div>
+
+
+        <br>
+        <ul class="entry__buttons">
+            <li *ngFor="let button of entryButtons"
+                class="entry__buttons-column">
+
+                <div class="entry__button-name" 
+                        (click)="toggleRefs(button)"
+                        [ngClass] = "{
+                            activeButton: refsActive(button)
+                        }"
+                >
+                    {{button}}
+                </div>
+
+                <div *ngIf="isRefVisible(button)" class="entry__button-refs">
+                    <button *ngFor="let buttonRef of entry.get(button)" 
+                            (click)="loadEntry(buttonRef.split('#')[1])"
+                            class="entry__button"
+                    >
+                        {{buttonRef.split('#')[0]}}
+                    </button>
+                </div>
+
+            </li>
+        </ul>
+    </div>
+
+    <div *ngIf="!entry" class="entry__table">
+        the Σntry dᕕta is corru(ᐛ)ᕗ
+    </div>
+</div>
